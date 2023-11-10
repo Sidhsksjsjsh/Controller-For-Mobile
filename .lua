@@ -82,9 +82,6 @@ fbutton.Font = Enum.Font.SourceSans
 fbutton.Text = "Name Skill"
 fbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
 fbutton.TextSize = 14.000
-fbutton.MouseButton1Down:connect(function()
-   Function Skill Here()
-end)
 
 ebutton.Name = "TO"
 ebutton.Parent = epic
@@ -95,9 +92,6 @@ ebutton.Font = Enum.Font.SourceSans
 ebutton.Text = "Name Skill"
 ebutton.TextColor3 = Color3.fromRGB(0, 0, 0)
 ebutton.TextSize = 14.000
-ebutton.MouseButton1Down:connect(function()
-   Function Skill Here()
-end)
 
 qbutton.Name = "GcoSad"
 qbutton.Parent = epic
@@ -108,9 +102,6 @@ qbutton.Font = Enum.Font.SourceSans
 qbutton.Text = "Name Skill"
 qbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
 qbutton.TextSize = 14.000
-qbutton.MouseButton1Down:connect(function()
-   Function Skill Here()
-end)
 
 tbutton.Name = "Xbutton"
 tbutton.Parent = epic
@@ -121,10 +112,12 @@ tbutton.Font = Enum.Font.SourceSans
 tbutton.Text = "Name Skill"
 tbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
 tbutton.TextSize = 14.000
-tbutton.MouseButton1Down:connect(function()
-   Function Skill Here()
-end)
 
+--[[
+.MouseLeave:Connect(function()
+.MouseEnter:Connect(function()
+]]
+            
 function Control:MouseButton1Down(name,gui,func)
           if gui == 1 then
             fbutton.Text = name
@@ -144,6 +137,54 @@ function Control:MouseButton1Down(name,gui,func)
           elseif gui == 4 then
             tbutton.Text = name
             tbutton.MouseButton1Down:connect(function()
+                func()
+            end)
+          end
+end
+
+function Control:MouseEnter(name,gui,func)
+          if gui == 1 then
+            fbutton.Text = name
+            fbutton.MouseEnter:connect(function()
+                func()
+            end)
+          elseif gui == 2 then
+            ebutton.Text = name
+            ebutton.MouseEnter:connect(function()
+                func()
+            end)
+          elseif gui == 3 then
+            qbutton.Text = name
+            qbutton.MouseEnter:connect(function()
+                func()
+            end)
+          elseif gui == 4 then
+            tbutton.Text = name
+            tbutton.MouseEnter:connect(function()
+                func()
+            end)
+          end
+end
+
+function Control:MouseLeave(name,gui,func)
+          if gui == 1 then
+            fbutton.Text = name
+            fbutton.MouseLeave:connect(function()
+                func()
+            end)
+          elseif gui == 2 then
+            ebutton.Text = name
+            ebutton.MouseLeave:connect(function()
+                func()
+            end)
+          elseif gui == 3 then
+            qbutton.Text = name
+            qbutton.MouseLeave:connect(function()
+                func()
+            end)
+          elseif gui == 4 then
+            tbutton.Text = name
+            tbutton.MouseLeave:connect(function()
                 func()
             end)
           end
