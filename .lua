@@ -32,6 +32,7 @@ epic.Position = UDim2.new(0.0911376476, 0, 0.466830462, 0)
 epic.Size = UDim2.new(0, 181, 0, 178)
 epic.Active = true
 epic.Draggable = true
+epic.Visible = false
 
 creator.Name = "creator"
 creator.Parent = epic
@@ -188,6 +189,10 @@ function Control:MouseLeave(name,gui,func)
                 func()
             end)
           end
+end
+
+function Control:Active()
+            epic.Visible = true
 end
 
 return Control
